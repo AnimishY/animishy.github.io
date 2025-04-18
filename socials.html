@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animish Yadav | Socials</title>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <meta name="description" content="Personal webpage of Animish Yadav." />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <style>
+      /* Custom styles for the socials page */
+      body {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        overflow-x: hidden;
+      }
+      
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+        padding: 2rem;
+        max-width: 900px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .bento-item {
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        text-decoration: none;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: bold;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        height: 180px;
+        transform-style: preserve-3d;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .bento-item:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle at center, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .bento-item:hover:before {
+        opacity: 1;
+      }
+
+      .bento-item:hover {
+        transform: translateY(-15px) rotateX(10deg);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        text-decoration: none;
+      }
+
+      .bento-item i {
+        font-size: 3rem;
+        margin-bottom: 0.8rem;
+        transition: transform 0.5s ease;
+      }
+
+      .bento-item:hover i {
+        transform: scale(1.2) translateZ(30px);
+      }
+
+      .bento-item.linkedin {
+        background: linear-gradient(135deg, #ffffff 0%, #e4f1fe 100%);
+      }
+
+      .bento-item.linkedin i {
+        color: #0077b5;
+      }
+
+      .bento-item.instagram {
+        background: linear-gradient(135deg, #ffffff 0%, #ffecf1 100%);
+      }
+
+      .bento-item.instagram i {
+        background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .bento-item.github {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+      }
+
+      .bento-item.twitter {
+        background: linear-gradient(135deg, #ffffff 0%, #e8f5fd 100%);
+      }
+
+      .bento-item.twitter i {
+        color: #1da1f2;
+      }
+
+      .bento-item.leetcode {
+        background: linear-gradient(135deg, #ffffff 0%, #fffde7 100%);
+      }
+
+      .bento-item.leetcode i {
+        color: #f89f1b;
+      }
+
+      .bento-item.codeforces {
+        background: linear-gradient(135deg, #ffffff 0%, #e3f2fd 100%);
+      }
+
+      .bento-item.codeforces i {
+        color: #1f8acb;
+      }
+
+      /* Game container styles */
+      .game-container {
+        position: relative;
+        max-width: 900px;
+        margin: 2rem auto;
+        text-align: center;
+        padding: 0 1rem;
+      }
+
+      .game-title {
+        font-family: "Roboto Mono", monospace;
+        font-size: 1.8rem;
+        color: #0082e6;
+        margin-bottom: 1rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .game-description {
+        font-family: "Raleway", sans-serif;
+        color: #555;
+        margin-bottom: 1.5rem;
+      }
+
+      .bubble-game {
+        position: relative;
+        height: 300px;
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 0 auto;
+        max-width: 100%;
+      }
+
+      .bubble {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 130, 230, 0.7));
+        box-shadow: 
+          inset 0 0 10px rgba(255, 255, 255, 0.8),
+          0 0 15px rgba(0, 130, 230, 0.3);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Raleway", sans-serif;
+        color: white;
+        font-weight: 600;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        user-select: none;
+        transition: transform 0.2s ease;
+      }
+
+      .bubble:hover {
+        transform: scale(1.05);
+      }
+
+      .bubble.facebook { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(59, 89, 152, 0.7)); }
+      .bubble.twitter { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(29, 161, 242, 0.7)); }
+      .bubble.instagram { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(225, 48, 108, 0.7)); }
+      .bubble.linkedin { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(0, 119, 181, 0.7)); }
+      .bubble.github { background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(36, 41, 46, 0.7)); }
+
+      .bubble span {
+        font-size: 0.8rem;
+      }
+
+      .splash {
+        position: absolute;
+        width: 3px;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        transform-origin: bottom center;
+        opacity: 0;
+      }
+
+      @keyframes splash {
+        0% {
+          transform: scale(0.1, 0.1) rotate(0deg);
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          transform: scale(1, 3) rotate(var(--rotation));
+          opacity: 0;
+        }
+      }
+
+      .game-score {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 5px 10px;
+        font-family: "Roboto Mono", monospace;
+        color: #0082e6;
+        font-weight: 600;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .pulse-effect {
+        animation: pulse 1.5s infinite;
+      }
+
+      @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+      }
+
+      .social-tooltip {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px 20px;
+        background: rgba(0, 130, 230, 0.9);
+        color: white;
+        border-radius: 10px;
+        font-family: "Raleway", sans-serif;
+        font-size: 0.9rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        pointer-events: none;
+      }
+
+      .social-tooltip.show {
+        opacity: 1;
+      }
+
+      /* Particles */
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .bento-grid {
+          grid-template-columns: repeat(2, 1fr);
+          padding: 1.5rem;
+        }
+        
+        .game-title {
+          font-size: 1.5rem;
+        }
+      }
+
+      /* Updated mobile styling for the game container */
+      @media (max-width: 576px) {
+        .bubble-game {
+          height: 400px; /* Taller game area on mobile */
+          width: 85%; /* Narrower width */
+          max-width: 300px; /* Maximum width to ensure it fits */
+        }
+        
+        .game-container {
+          padding: 0 10px;
+        }
+        
+        .game-description {
+          font-size: 0.9rem;
+          padding: 0 5px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .bento-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <!-- Checkbox for toggling menu -->
+      <input type="checkbox" id="check">
+      <!-- Menu icon -->
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- Site logo -->
+      <label class="logo">@AnimishY</label>
+      <!-- Navigation links -->
+      <ul class="ohhello">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="programming.html">Programming</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a class="active"  href="socials.html">Socials</a></li>
+      </ul>
+    </nav>
+
+    <!-- Particles background -->
+    <div id="particles-js"></div>
+
+    <!-- Game container -->
+    <div class="game-container">
+      <h2 class="game-title">Pop the Social Bubbles!</h2>
+      <p class="game-description">Click on the floating bubbles to pop them and increase your score. Can you catch them all?</p>
+      <div class="bubble-game">
+        <div class="game-score">Score: <span id="score">0</span></div>
+      </div>
+    </div>
+
+    <!-- Social media links in bento grid -->
+    <div class="bento-grid">
+      <a href="https://www.linkedin.com/in/animishy" target="_blank" class="bento-item linkedin pulse-effect">
+        <i class="fab fa-linkedin"></i>
+        LinkedIn
+      </a>
+      
+      <a
+        href="https://www.instagram.com/animishy"
+        target="_blank"
+        class="bento-item instagram"
+      >
+        <i class="fab fa-instagram"></i>
+        Instagram
+      </a>
+      <a
+        href="https://www.github.com/animishy"
+        target="_blank"
+        class="bento-item github"
+      >
+        <i class="fab fa-github"></i>
+        GitHub
+      </a>
+
+      <a
+        href="https://www.twitter.com/animishy"
+        target="_blank"
+        class="bento-item twitter"
+      >
+        <i class="fab fa-twitter"></i>
+        Twitter
+      </a>
+      <a
+        href="https://leetcode.com/u/animishy"
+        target="_blank"
+        class="bento-item leetcode"
+      >
+        <i class="fas fa-code"></i>
+        LeetCode
+      </a>
+      
+    </div>
+
+    <div class="social-tooltip">Connect with me!</div>
+
+    <footer class="footer">
+      <div class="footer-links">
+        <p>@AnimishY</p>
+        <p>Animish Yadav</p>
+      </div>
+      <p>&copy; 2025, All rights reserved.</p>
+      
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      // Initialize particles.js
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 30,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#0082e6"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": 0.3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 5,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#0082e6",
+            "opacity": 0.2,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 0.6
+              }
+            },
+            "push": {
+              "particles_nb": 4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+
+      // Bubble game logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const gameArea = document.querySelector('.bubble-game');
+        const scoreElement = document.getElementById('score');
+        const tooltip = document.querySelector('.social-tooltip');
+        let score = 0;
+        
+        // Social media platforms for the bubbles
+        const socials = [
+          { name: 'LinkedIn', class: 'linkedin', icon: 'fa-linkedin-in' },
+          { name: 'Twitter', class: 'twitter', icon: 'fa-twitter' },
+          { name: 'Instagram', class: 'instagram', icon: 'fa-instagram' },
+          { name: 'GitHub', class: 'github', icon: 'fa-github' },
+          { name: 'Facebook', class: 'facebook', icon: 'fa-facebook-f' }
+        ];
+        
+        // Create a bubble
+        function createBubble() {
+          const bubble = document.createElement('div');
+          
+          // Adjust bubble size based on screen size
+          const isMobile = window.innerWidth <= 576;
+          const size = isMobile ? 
+                      (Math.random() * 30 + 30) : // Smaller on mobile (30-60px)
+                      (Math.random() * 40 + 40);  // Larger on desktop (40-80px)
+          
+          const social = socials[Math.floor(Math.random() * socials.length)];
+          
+          bubble.className = `bubble ${social.class}`;
+          bubble.style.width = `${size}px`;
+          bubble.style.height = `${size}px`;
+          
+          // Position the bubble
+          const maxLeft = gameArea.clientWidth - size;
+          const maxTop = gameArea.clientHeight - size;
+          bubble.style.left = `${Math.random() * maxLeft}px`;
+          bubble.style.top = `${Math.random() * maxTop}px`;
+          
+          // Add icon and text to the bubble
+          const icon = document.createElement('i');
+          icon.className = `fab ${social.icon}`;
+          bubble.appendChild(icon);
+          
+          // Add bubble to the game area
+          gameArea.appendChild(bubble);
+          
+          // Animate the bubble
+          animateBubble(bubble);
+          
+          // Add click event to pop the bubble
+          bubble.addEventListener('click', () => {
+            popBubble(bubble);
+          });
+        }
+        
+        // Adjust bubble speed based on screen size
+        function getBubbleSpeed() {
+          return window.innerWidth <= 576 ? 
+                 (Math.random() * 2 + 0.5) : // Slower on mobile
+                 (Math.random() * 3 + 1);    // Faster on desktop
+        }
+        
+        // Animate bubble movement
+        function animateBubble(bubble) {
+          const speed = getBubbleSpeed();
+          const direction = {
+            x: Math.random() > 0.5 ? speed : -speed,
+            y: Math.random() > 0.5 ? speed : -speed
+          };
+          
+          function moveBubble() {
+            const rect = bubble.getBoundingClientRect();
+            const gameRect = gameArea.getBoundingClientRect();
+            
+            let left = parseFloat(bubble.style.left);
+            let top = parseFloat(bubble.style.top);
+            
+            // Bounce off the walls
+            if (left <= 0 || left >= gameRect.width - rect.width) {
+              direction.x *= -1;
+            }
+            
+            if (top <= 0 || top >= gameRect.height - rect.height) {
+              direction.y *= -1;
+            }
+            
+            bubble.style.left = `${left + direction.x}px`;
+            bubble.style.top = `${top + direction.y}px`;
+            
+            if (bubble.isConnected) { // Check if bubble still exists
+              requestAnimationFrame(moveBubble);
+            }
+          }
+          
+          requestAnimationFrame(moveBubble);
+        }
+        
+        // Play a sound when a bubble is popped
+        function playPopSound() {
+          try {
+            const popSound = new Audio('tunes/bubblepop.mp3');
+            popSound.volume = 0.5; // Set volume to 50%
+            popSound.play().catch(e => console.log('Audio play failed:', e));
+          } catch (e) {
+            console.log('Audio error:', e);
+          }
+        }
+        
+        // Pop a bubble
+        function popBubble(bubble) {
+          // Create splash effect
+          createSplashEffect(bubble);
+          
+          // Play pop sound
+          playPopSound();
+          
+          // Increment score
+          score += 10;
+          scoreElement.textContent = score;
+          
+          // Remove the bubble
+          bubble.remove();
+          
+          // Create a new bubble after a short delay
+          setTimeout(createBubble, 1000);
+          
+          // Show random encouraging tooltip
+          const messages = [
+            "Great job! Keep connecting!",
+            "Nice pop! Find me on social media!",
+            "+10 points! You're awesome!",
+            "Pop-tastic! Check out my profiles!",
+            "Bubble master! Connect with me online!"
+          ];
+          
+          tooltip.textContent = messages[Math.floor(Math.random() * messages.length)];
+          tooltip.classList.add('show');
+          
+          setTimeout(() => {
+            tooltip.classList.remove('show');
+          }, 2000);
+        }
+        
+        // Create splash effect when bubble pops
+        function createSplashEffect(bubble) {
+          const rect = bubble.getBoundingClientRect();
+          const gameRect = gameArea.getBoundingClientRect();
+          
+          // Center position of the bubble
+          const centerX = rect.left + rect.width / 2 - gameRect.left;
+          const centerY = rect.top + rect.height / 2 - gameRect.top;
+          
+          // Create multiple splash particles
+          for (let i = 0; i < 8; i++) {
+            const splash = document.createElement('div');
+            splash.className = 'splash';
+            splash.style.left = `${centerX}px`;
+            splash.style.top = `${centerY}px`;
+            
+            // Random angle for the splash
+            const angle = (i * 45) + Math.random() * 30;
+            splash.style.setProperty('--rotation', `${angle}deg`);
+            
+            // Add the splash to the game area
+            gameArea.appendChild(splash);
+            
+            // Animate the splash
+            splash.style.animation = `splash 0.6s ease-out forwards`;
+            
+            // Remove splash after animation
+            setTimeout(() => {
+              if (splash.isConnected) { // Check if splash still exists
+                splash.remove();
+              }
+            }, 600);
+          }
+        }
+        
+        // Initial bubble creation
+        function initBubbles() {
+          // Clear any existing bubbles first
+          const existingBubbles = document.querySelectorAll('.bubble');
+          existingBubbles.forEach(bubble => bubble.remove());
+          
+          // Add fewer bubbles on mobile
+          const bubbleCount = window.innerWidth <= 576 ? 3 : 5;
+          
+          for (let i = 0; i < bubbleCount; i++) {
+            setTimeout(() => createBubble(), i * 500);
+          }
+        }
+        
+        // Initialize bubbles
+        initBubbles();
+        
+        // Re-initialize bubbles when window is resized
+        let resizeTimer;
+        window.addEventListener('resize', () => {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(() => {
+            initBubbles();
+          }, 250);
+        });
+
+        // Toggle the pulse effect on random items periodically
+        setInterval(() => {
+          const bentoItems = document.querySelectorAll('.bento-item');
+          bentoItems.forEach(item => item.classList.remove('pulse-effect'));
+          
+          // Choose a random item to pulse
+          const randomIndex = Math.floor(Math.random() * bentoItems.length);
+          bentoItems[randomIndex].classList.add('pulse-effect');
+        }, 3000);
+      });
+    </script>
+  </body>
+</html>

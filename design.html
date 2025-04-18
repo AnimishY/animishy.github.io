@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animish Yadav</title>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+
+    ></script>
+
+    <meta name="description" content="Personal webpage of Animish Yadav." />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <style>
+        /* Particles background styles */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.3; /* Subtle background for design page */
+        }
+        
+        .resume, .models-showcase {
+            position: relative;
+            z-index: 2; /* Ensure content is above particles */
+        }
+        
+        /* Additional styles to ensure 3D models remain interactive */
+        model-viewer {
+            z-index: 3;
+            position: relative;
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Particles background container -->
+    <div id="particles-js"></div>
+    
+    <!-- NAV BAR COMES HERE -->
+    <nav>
+      <!-- Checkbox for toggling menu -->
+      <input type="checkbox" id="check" />
+      <!-- Menu icon -->
+      <label for="check" class="checkbtn">
+          <i class="fas fa-bars"></i>
+      </label>
+      <!-- Site logo -->
+      <label class="logo">@AnimishY</label>
+      <!-- Navigation links -->
+      <ul class="ohhello">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="programming.html">Programming</a></li>
+          <li><a class="active" href="design.html">Design</a></li>
+          <li><a href="socials.html">Socials</a></li>
+      </ul>
+  </nav>
+
+  <div class="resume" style="margin-bottom: 0; padding-left: 2.5%; padding-right: 2.5%;">
+      <div class="header"></div>
+      <h2 class="thodabadatextidhrbhi">3D Models</h2>
+      <p class="section-description">Explore my 3D modeling projects created using Fusion 360 and other CAD tools.</p>
+  </div>
+
+  <section class="models-showcase">
+      <div class="model-card">
+          <div class="model-preview">
+              <model-viewer src="PIS-A3-A3.glb" alt="A 3D model" touch-action="pan-y" auto-rotate shadow-intensity="1"
+                  camera-controls auto-rotate shadow-intensity="1"
+                  camera-orbit="180deg 90deg 2.5m" rotation="0deg 180deg 90deg"
+                  style="width: 100%; height: 400px; background-color: #f0f0f0;"></model-viewer>
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Mechanical Assembly</h3>
+              <p class="model-description">A complex mechanical assembly with moving parts designed in Fusion 360.</p>
+              <div class="model-actions">
+                  <a href="https://iiitd911.autodesk360.com/g/shares/SH286ddQT78850c0d8a467547d84430c76db" target="_blank" class="fusion-web-button desktop">
+                      View in Fusion Web
+                  </a>
+                  <a href="artest.html" class="fusion-web-button mobile">
+                      View in AR
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="model-card">
+          <div class="model-preview">
+              <model-viewer src="PIS-A3-A3.glb" alt="A 3D model" touch-action="pan-y" auto-rotate shadow-intensity="1"
+                  camera-controls auto-rotate shadow-intensity="1"
+                  camera-orbit="180deg 90deg 2.5m" rotation="0deg 180deg 90deg"
+                  style="width: 100%; height: 400px; background-color: #f0f0f0;"></model-viewer>
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Product Prototype</h3>
+              <p class="model-description">An innovative product prototype with ergonomic design considerations.</p>
+              <div class="model-actions">
+                  <a href="https://iiitd911.autodesk360.com/g/shares/SH286ddQT78850c0d8a467547d84430c76db" target="_blank" class="fusion-web-button desktop">
+                      View in Fusion Web
+                  </a>
+                  <a href="artest.html" class="fusion-web-button mobile">
+                      View in AR
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="model-card">
+          <div class="model-preview">
+              <model-viewer src="PIS-A3-A3.glb" alt="A 3D model" touch-action="pan-y" auto-rotate shadow-intensity="1"
+                  camera-controls auto-rotate shadow-intensity="1"
+                  camera-orbit="180deg 90deg 2.5m" rotation="0deg 180deg 90deg"
+                  style="width: 100%; height: 400px; background-color: #f0f0f0;"></model-viewer>
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Architectural Concept</h3>
+              <p class="model-description">A modern architectural concept with sustainable design principles.</p>
+              <div class="model-actions">
+                  <a href="https://iiitd911.autodesk360.com/g/shares/SH286ddQT78850c0d8a467547d84430c76db" target="_blank" class="fusion-web-button desktop">
+                      View in Fusion Web
+                  </a>
+                  <a href="artest.html" class="fusion-web-button mobile">
+                      View in AR
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <div class="resume" style="margin-bottom: 0; padding-left: 2.5%; padding-right: 2.5%;">
+      <div class="header"></div>
+      <h2 class="thodabadatextidhrbhi">Visual Design</h2>
+      <p class="section-description">A collection of my visual design projects including posters, brochures, and digital graphics.</p>
+  </div>
+
+  <section class="models-showcase visual-design">
+      <div class="model-card">
+          <div class="design-preview">
+              <img src="dss.jpg" alt="Design project thumbnail" />
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Digital System Design</h3>
+              <p class="model-description">A comprehensive visual guide to digital system design principles.</p>
+              <div class="model-actions">
+                  <a href="dss.pdf" class="fusion-web-button" target="_blank">
+                      View PDF
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="model-card">
+          <div class="design-preview">
+              <img src="lhc.jpg" alt="Design project thumbnail" />
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Building Design</h3>
+              <p class="model-description">Architectural visualization and building layout design concept.</p>
+              <div class="model-actions">
+                  <a href="bld.pdf" class="fusion-web-button" target="_blank">
+                      View PDF
+                  </a>
+              </div>
+          </div>
+      </div>
+
+      <div class="model-card">
+          <div class="design-preview">
+              <img src="dzn.jpg" alt="Design project thumbnail" />
+          </div>
+          <div class="model-info">
+              <h3 class="model-title">Visual Design Concept</h3>
+              <p class="model-description">Experimental visual design exploring color theory and composition.</p>
+              <div class="model-actions">
+                  <a href="vdc.pdf" class="fusion-web-button" target="_blank">
+                      View PDF
+                  </a>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <script>
+      function toggleMenu() {
+          const navLinks = document.querySelector(".nav-links");
+          navLinks.classList.toggle("active");
+      }
+  </script>
+  
+  <!-- Add particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+      // Initialize particles.js
+      particlesJS("particles-js", {
+          "particles": {
+              "number": {
+                  "value": 60,
+                  "density": {
+                      "enable": true,
+                      "value_area": 800
+                  }
+              },
+              "color": {
+                  "value": "#0082e6"
+              },
+              "shape": {
+                  "type": "circle",
+                  "stroke": {
+                      "width": 0,
+                      "color": "#000000"
+                  },
+                  "polygon": {
+                      "nb_sides": 5
+                  }
+              },
+              "opacity": {
+                  "value": 0.2,
+                  "random": true,
+                  "anim": {
+                      "enable": false,
+                      "speed": 1,
+                      "opacity_min": 0.1,
+                      "sync": false
+                  }
+              },
+              "size": {
+                  "value": 3,
+                  "random": true,
+                  "anim": {
+                      "enable": false,
+                      "speed": 40,
+                      "size_min": 0.1,
+                      "sync": false
+                  }
+              },
+              "line_linked": {
+                  "enable": true,
+                  "distance": 150,
+                  "color": "#0082e6",
+                  "opacity": 0.2,
+                  "width": 1
+              },
+              "move": {
+                  "enable": true,
+                  "speed": 1.8,
+                  "direction": "none",
+                  "random": false,
+                  "straight": false,
+                  "out_mode": "out",
+                  "bounce": false,
+                  "attract": {
+                      "enable": false,
+                      "rotateX": 600,
+                      "rotateY": 1200
+                  }
+              }
+          },
+          "interactivity": {
+              "detect_on": "canvas",
+              "events": {
+                  "onhover": {
+                      "enable": true,
+                      "mode": "grab"
+                  },
+                  "onclick": {
+                      "enable": true,
+                      "mode": "push"
+                  },
+                  "resize": true
+              },
+              "modes": {
+                  "grab": {
+                      "distance": 140,
+                      "line_linked": {
+                          "opacity": 0.6
+                      }
+                  },
+                  "push": {
+                      "particles_nb": 4
+                  }
+              }
+          },
+          "retina_detect": true
+      });
+  </script>
+  </body>
+</html>

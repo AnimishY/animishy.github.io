@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animish Yadav</title>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <meta name="description" content="Personal webpage of Animish Yadav." />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      media="print" onload="this.media='all'"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    
+    <style>
+      /* Particles background styles */
+      #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        opacity: 0.4; /* Make particles more subtle on resume page */
+      }
+      
+      .resume-container {
+        position: relative;
+        z-index: 2; /* Ensure content is above particles */
+      }
+      
+      .thisdiviscentered {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Particles background container -->
+    <div id="particles-js"></div>
+    
+    <!-- NAV BAR COMES HERE -->
+    <nav>
+      <!-- Checkbox for toggling menu -->
+      <input type="checkbox" id="check" />
+      <!-- Menu icon -->
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- Site logo -->
+      <label class="logo">@AnimishY</label>
+      <!-- Navigation links -->
+      <ul class="ohhello">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="resume.html">Resume</a></li>
+        <li><a href="programming.html">Programming</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="socials.html">Socials</a></li>
+      </ul>
+    </nav>
+
+    <div class="resume-container">
+      <div class="resume-header">
+        <div class="resume-avatar">
+          <div class="avatar-circle">
+            <span class="initials">AY</span>
+          </div>
+        </div>
+        <div class="resume-intro">
+          <h1 class="resume-name">Animish Yadav</h1>
+          <h2 class="resume-title">Computer Science & Design Student</h2>
+          <p class="resume-bio">
+            Hi, I'm Animish Yadav — a Computer Science and Design undergraduate at
+            IIIT Delhi, passionate about building impactful tech solutions that
+            blend functionality with creativity. With a strong foundation in
+            software development, cloud computing, and user-centric design, I
+            enjoy turning complex problems into intuitive, scalable products.
+            Whether it's crafting full-stack applications, designing
+            efficient algorithms, or leading creative tech initiatives, I'm always
+            driven by curiosity, innovation, and purpose.
+          </p>
+        </div>
+      </div>
+      
+      <div class="resume-grid">
+        <div class="resume-main">
+          <section class="resume-section">
+            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2023 - 2027</div>
+                <div class="timeline-content">
+                  <h3>Indraprastha Institute of Information Technology, Delhi</h3>
+                  <p>B.Tech in Computer Science and Design</p>
+                </div>
+              </div>
+              
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2021 - 2023</div>
+                <div class="timeline-content">
+                  <h3>Faith Academy</h3>
+                  <p>PCM with Computer Science and Health Care</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          
+          <section class="resume-section">
+            <h2 class="section-title"><i class="fas fa-laptop-code"></i> CS Electives</h2>
+            <div class="tags-container">
+              <span class="tag">Operating Systems</span>
+              <span class="tag">Database Management Systems</span>
+              <span class="tag">Advanced Programming</span>
+            </div>
+          </section>
+          
+          <section class="resume-section">
+            <h2 class="section-title"><i class="fas fa-pencil-ruler"></i> Design Electives</h2>
+            <div class="tags-container">
+              <span class="tag">Visual Design and Communication</span>
+              <span class="tag">Design of Interactive Systems</span>
+              <span class="tag">Prototyping Interactive Systems</span>
+              <span class="tag">Research Methods in Social Science & Design</span>
+            </div>
+          </section>
+        </div>
+        
+        <div class="resume-sidebar">
+          <section class="resume-section sidebar-section">
+            <h2 class="section-title"><i class="fas fa-id-card"></i> Contact</h2>
+            <ul class="contact-list">
+              <li><i class="fas fa-calendar-alt"></i> January 15, 2006</li>
+              <li>
+                <i class="fas fa-map-marker-alt"></i> 
+                534 / E1 Block, CPWD Complex<br>
+                Karol Bagh, New Delhi<br>
+                Delhi 110005
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i> 
+                <a href="mailto:animish23089@iiitd.ac.in">animish23089@iiitd.ac.in</a>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i> 
+                <a href="tel:+917217603936">+91 721-760-3936</a>
+              </li>
+            </ul>
+          </section>
+          
+          <section class="resume-section sidebar-section">
+            <h2 class="section-title"><i class="fas fa-code"></i> Skills</h2>
+            
+            <div class="skills-container">
+              <h3 class="skills-category">Programming Languages</h3>
+              <div class="skill-item">
+                <span class="skill-name">Java</span>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 90%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 85%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 80%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">C++</span>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 75%"></div>
+                </div>
+              </div>
+              <div class="skill-item">
+                <span class="skill-name">Go</span>
+                <div class="skill-bar">
+                  <div class="skill-level" style="width: 65%"></div>
+                </div>
+              </div>
+              
+              <h3 class="skills-category">Frameworks</h3>
+              <div class="skill-badges">
+                <span class="skill-badge">React</span>
+                <span class="skill-badge">Node</span>
+                <span class="skill-badge">Express</span>
+                <span class="skill-badge">Tailwind</span>
+                <span class="skill-badge">Bootstrap</span>
+              </div>
+              
+              <h3 class="skills-category">Tools</h3>
+              <div class="skill-badges">
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Linux</span>
+                <span class="skill-badge">Figma</span>
+                <span class="skill-badge">Azure</span>
+                <span class="skill-badge">HTML/CSS</span>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="thisdiviscentered">
+      <a href="resume.pdf" class="download-button" download><button class="rcorners4"><i class="fas fa-download"></i> Download Resume as PDF</button></a>
+    </div>
+
+    <script>
+      function toggleMenu() {
+        const navLinks = document.querySelector(".nav-links");
+        navLinks.classList.toggle("active");
+      }
+    </script>
+    
+    <!-- Add particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      // Initialize particles.js
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 50, // Fewer particles for resume page
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#0082e6"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            }
+          },
+          "opacity": {
+            "value": 0.2, // More transparent for resume page
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#0082e6",
+            "opacity": 0.2,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 1.5, // Slower movement for resume page
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 0.6
+              }
+            },
+            "push": {
+              "particles_nb": 4
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animish Yadav</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="stylesheet.css" />
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  
+    <meta name="description" content="Personal webpage of Animish Yadav." />
+  
+    <!-- Include the library. -->
+    <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+  
+    <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+    <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+  
+  </head>
+  <body>
+  <!-- NAV BAR COMES HERE -->
+  <nav>
+    <!-- Checkbox for toggling menu -->
+    <input type="checkbox" id="check">
+    <!-- Menu icon -->
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- Site logo -->
+    <label class="logo">@AnimishY</label>
+    <!-- Navigation links -->
+    <ul class="ohhello">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="programming.html">Programming</a></li>
+      <li><a href="design.html">Design</a></li>
+      <li><a href="socials.html">Socials</a></li>
+    </ul>
+
+  </nav>
+
+
+  <div class="rotatingText2">
+    <div class="rotatingText-content">
+      <div class="tracking-in-expand-main">
+        <p class="rotatingText-description">I am</p>
+        <h1 class="mainin">@AnimishY</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="rotatingText">
+    <div class="rotatingText-content">
+      <p class="rotatingText-description"> and I am a</p>
+
+      <h2 class="rotatingText-adjective">Developer</h2>
+      <h2 class="rotatingText-adjective">Designer</h2>
+      <h2 class="rotatingText-adjective">Problem Solver</h2>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="text-section">
+      <h1 class="h1mob">Building Solutions <br> That pivot the world</h1>
+      <p class="pmob">
+        I am a passionate developer and designer with a knack for creating innovative solutions. My journey in the tech
+        world has been driven by a desire to make a positive impact through technology. I believe in the power of
+        collaboration and creativity to solve complex problems and bring ideas to life.
+      </p>
+    </div>
+    <div class="globe-section">
+      <canvas id="cobe" width="1000px" height="1000px"></canvas>
+    </div>
+  </div>
+
+  <script type="module">
+    import createGlobe from "https://cdn.skypack.dev/cobe";
+
+    let phi = 0;
+    let canvas = document.getElementById("cobe");
+
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: 2,
+      width: 1000,
+      height: 1000,
+      phi: 0,
+      theta: 0,
+      dark: 0,
+      diffuse: 1.2,
+      scale: 1,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [1, 1, 1],
+      markerColor: [1, 0.5, 1],
+      glowColor: [1, 1, 1],
+      offset: [0, 0],
+      markers: [
+        { location: [37.7595, -122.4367], size: 0.03 },
+        { location: [40.7128, -74.006], size: 0.1 }
+      ],
+      onRender: (state) => {
+        state.phi = phi;
+        phi += 0.01;
+      }
+    });
+  </script>
+
+
+  <div class="new-section">
+    <h3 class="chotutext">Leave a message</h3>
+
+    <iframe width="100%" height="500px"
+      src="https://browserboard.com/whiteboard/izFFFQHJm5BWq76xkcM4Z7?key=JrsbaFDhv7aAnFuAzj86h9" frameborder="0"
+      scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+  </div>
+
+
+
+   
+
+    <footer class="footer">
+      <div class="footer-links">
+        <p>@AnimishY</p>
+        <p>Animish Yadav</p>
+      </div>
+      <p>&copy; 2025, All rights reserved.</p>
+    </footer>
+
+    <script>
+      const pianoKeys = document.querySelectorAll(".piano-keys .key"),
+        volumeSlider = document.querySelector(".volume-slider input"),
+        keysCheckbox = document.querySelector(".keys-checkbox input");
+      let allKeys = [];
+      const playTune = (key) => {
+        const audio = new Audio(`tunes/${key}.wav`); // create a new Audio object for each key press
+        audio.volume = volumeSlider.value; // set the volume based on the slider value
+        audio.play(); // play the audio
+        const clickedKey = document.querySelector(`[data-key="${key}"]`); // get the clicked key element
+        clickedKey.classList.add("active"); // add active class to the clicked key element
+        setTimeout(() => {
+          // remove active class after 150 ms from the clicked key element
+          clickedKey.classList.remove("active");
+        }, 150);
+      };
+      pianoKeys.forEach((key) => {
+        allKeys.push(key.dataset.key); // add data-key value to the allKeys array
+        // call playTune function with passing data-key value as an argument
+        key.addEventListener("click", () => playTune(key.dataset.key));
+      });
+      const handleVolume = (e) => {
+        // update volume for future audio instances
+        volumeSlider.value = e.target.value;
+      };
+      const showHideKeys = () => {
+        // toggle hide class from each key on the checkbox click
+        pianoKeys.forEach((key) => key.classList.toggle("hide"));
+      };
+      const pressedKey = (e) => {
+        // if the pressed key is in the allKeys array, only call the playTune function
+        if (allKeys.includes(e.key)) playTune(e.key);
+      };
+      keysCheckbox.addEventListener("click", showHideKeys);
+      volumeSlider.addEventListener("input", handleVolume);
+      document.addEventListener("keydown", pressedKey);
+    </script>
+  </body>
+</html>

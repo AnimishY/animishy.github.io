@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animish Yadav</title>
+
+    <link rel="stylesheet" href="stylesheet.css">
+    <meta name="description" content="Personal webpage of Animish Yadav.">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    
+    <style>
+        /* Particles background styles */
+        #particles-js {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place behind content */
+        }
+        
+        /* Make timeline container relative with higher z-index */
+        .timeline-container {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Particles background container -->
+    <div id="particles-js"></div>
+    
+    <!-- NAV BAR COMES HERE -->
+    <nav>
+      <!-- Checkbox for toggling menu -->
+      <input type="checkbox" id="check">
+      <!-- Menu icon -->
+      <label for="check" class="checkbtn">
+        <i class="fas fa-bars"></i>
+      </label>
+      <!-- Site logo -->
+      <label class="logo">@AnimishY</label>
+      <!-- Navigation links -->
+      <ul class="ohhello">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a class="active" href="programming.html">Programming</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="socials.html">Socials</a></li>
+      </ul>
+    </nav>
+  
+    <div class="timeline-container">
+        <div class="timeline-wrapper">
+            <div class="timeline-header">
+                <h1>My<br>Programming<br>Journey</h1>
+                <p class="timeline-description">A timeline of my programming projects and achievements, from most recent to oldest.</p>
+            </div>
+            
+            <div class="timeline-line">
+                <div class="timeline-dot-top"></div>
+                <div class="timeline-dot-bottom"></div>
+            </div>
+
+            <!-- Year 2025 -->
+            <div class="year-marker">2025</div>
+            
+            <!-- Project 1 -->
+            <div class="timeline-project right-project">
+                <div class="project-dot"></div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">KalaHaat</h3>
+                        <a href="https://github.com/animishy/DBMS-PROJECT" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech">Python</span>
+                        <span class="tech">Flask</span>
+                        <span class="tech">MySQL</span>
+                        <span class="tech">HTML</span>
+                    </div>
+                    <p class="project-description">KalaHaat is an E-Commerce platform for small businees </p>
+                    <div class="project-fact">
+                        <em>Interesting fact:</em> This project features AI-Based product search.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://www.canva.com/design/DAGktrxKPd0/Nm5kcrEdrHAQOTGd-SVQ3Q/view?utm_content=DAGktrxKPd0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h39e8c643d8" class="project-btn"><i class="fas fa-file-alt"></i> Project Presentation</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Year 2024 -->
+            <div class="year-marker">2024</div>
+            <!-- Project 2 -->
+            <div class="timeline-project left-project">
+                <div class="project-dot"></div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Angry Birds Clone</h3>
+                        <a href="https://github.com/animishy/project2" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech">Java</span>
+                        <span class="tech">Gradle</span>
+                        <span class="tech">LibGDX</span>
+                        <span class="tech">JavaFX</span>
+                    </div>
+                    <p class="project-description">Angry Birds game clone for course project</p>
+                    <div class="project-fact">
+                        <em>Interesting fact:</em> Featured in a tech blog for innovative approach.
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/AnimishY/Angry_Birds" class="project-btn"><i class="fas fa-external-link-alt"></i> Download Game</a>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Project 3 -->
+            <div class="timeline-project right-project">
+                <div class="project-dot"></div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">AR Mobile Game</h3>
+                        <a href="https://github.com/yourusername/project3" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech">Unity</span>
+                        <span class="tech">C#</span>
+                        <span class="tech">ARKit</span>
+                        <span class="tech">Firebase</span>
+                    </div>
+                    <p class="project-description">Augmented reality mobile game that transforms your surroundings.</p>
+                    <div class="project-fact">
+                        <em>Interesting fact:</em> Completed development in just one weekend hackathon.
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn"><i class="fab fa-google-play"></i> Google Play</a>
+                        <a href="#" class="project-btn"><i class="fab fa-apple"></i> App Store</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="year-marker">2023</div>
+
+            <!-- Project 4 -->
+            <div class="timeline-project left-project">
+                <div class="project-dot"></div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3 class="project-title">Smart Home Dashboard</h3>
+                        <a href="https://github.com/yourusername/project4" class="github-link" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="tech-stack">
+                        <span class="tech">Vue.js</span>
+                        <span class="tech">Express</span>
+                        <span class="tech">MQTT</span>
+                        <span class="tech">GraphQL</span>
+                    </div>
+                    <p class="project-description">IoT dashboard for controlling and monitoring smart home devices.</p>
+                    <div class="project-fact">
+                        <em>Interesting fact:</em> Integrated with 20+ different smart home device APIs.
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-btn"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const projects = document.querySelectorAll('.timeline-project');
+            const years = document.querySelectorAll('.year-marker');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.2 });
+            
+            projects.forEach(project => {
+                observer.observe(project);
+            });
+            
+            years.forEach(year => {
+                observer.observe(year);
+            });
+        });
+    </script>
+    
+    <!-- Add particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize particles.js
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 80,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#0082e6"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                },
+                "opacity": {
+                    "value": 0.3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#0082e6",
+                    "opacity": 0.2,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false,
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "grab"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 140,
+                        "line_linked": {
+                            "opacity": 0.6
+                        }
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

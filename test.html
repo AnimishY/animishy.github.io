@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animish Yadav</title>
+
+    <link rel="stylesheet" href="stylesheet.css" />
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+    <meta name="description" content="Personal webpage of Animish Yadav." />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+
+<body>
+    <!-- NAV BAR COMES HERE -->
+    <nav>
+        <!-- Checkbox for toggling menu -->
+        <input type="checkbox" id="check" />
+        <!-- Menu icon -->
+        <label for="check" class="checkbtn">
+            <i class="fas fa-bars"></i>
+        </label>
+        <!-- Site logo -->
+        <label class="logo">@AnimishY</label>
+        <!-- Navigation links -->
+        <ul class="ohhello">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="resume.html">Resume</a></li>
+            <li><a href="programming.html">Programming</a></li>
+            <li><a class="active" href="design.html">Design</a></li>
+            <li><a href="socials.html">Socials</a></li>
+        </ul>
+    </nav>
+
+    
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            navLinks.classList.toggle("active");
+        }
+    </script>
+
+    <!-- <section class="rotatingText">
+        <div class="rotatingText-content">
+          <p class="rotatingText-description">
+            I'll make your website&hellip;
+          </p>
+      
+          <h2 class="rotatingText-adjective">beautiful</h2>
+          <h2 class="rotatingText-adjective">maintainable</h2>
+          <h2 class="rotatingText-adjective">perfect 👌</h2>
+        </div>
+      </section> -->
+</body>
+
+</html>

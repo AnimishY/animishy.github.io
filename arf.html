@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>AR Content</title>
+    <!-- Use more recent versions of the libraries for better mobile support -->
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <link rel="stylesheet" href="stylesheet.css" />
+  </head>
+  <body>
+    <!-- Loading screen -->
+    <div id="loadingScreen">
+      <div class="spinner"></div>
+      <div>Initializing AR...</div>
+    </div>
+    
+    <!-- Status message -->
+    <div id="statusMessage">Looking for marker...</div>
+    
+    <!-- AR Scene -->
+    <a-scene 
+      embedded 
+      arjs="detectionMode: mono_and_matrix; matrixCodeType: 3x3; sourceType: webcam; debugUIEnabled: false;" 
+      vr-mode-ui="enabled: false"
+      renderer="antialias: true; alpha: true; precision: mediump;"
+      device-orientation-permission-ui="enabled: false">
+      
+      <!-- Asset Management System -->
+      <a-assets>
+        <a-asset-item id="lamp-model" src="PIS-A3-A3.gltf"></a-asset-item>
+      </a-assets>
+      
+      <!-- Template 3D model (will be cloned on marker detection) -->
+      <a-entity
+        id="templateModel"
+        geometry="primitive: box"
+        position="0 0.5 0"
+        rotation="0 45 0"
+        material="color: #0066ff; opacity: 0.8;"
+        scale="0.05 0.05 0.05"
+        visible="false"
+        animation="property: rotation; to: 0 405 0; loop: true; dur: 10000; easing: linear;">
+      </a-entity>
+      
+      <!-- Hiro Marker -->
+      <a-marker preset="hiro" id="hiroMarker">
+        <a-entity id="markerContent"></a-entity>
+      </a-marker>
+      
+      <!-- Camera entity -->
+      <a-entity camera></a-entity>
+    </a-scene>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        const templateModel = document.getElementById('templateModel');
+        const markerContent = document.getElementById('markerContent');
+        const statusMessage = document.getElementById('statusMessage');
+        let currentModelType = 'box';
+        let modelInstance = null; // The active model instance
+        let markerLostTimeout = null; // Timer to delay the marker lost action
+        
+        // Function to update the model's attributes
+        function updateModelAttributes(targetModel) {
+          if (currentModelType === 'lamp') {
+            targetModel.setAttribute('gltf-model', '#lamp-model');
+            targetModel.removeAttribute('geometry');
+            targetModel.setAttribute('scale', '0.01 0.01 0.01');
+          } else {
+            targetModel.removeAttribute('gltf-model');
+            targetModel.setAttribute('geometry', `primitive: ${currentModelType}`);
+            targetModel.setAttribute('scale', '0.2 0.2 0.2');
+          }
+          targetModel.setAttribute('visible', true);
+        }
+        
+        // Listen for messages from the parent window for model changes
+        window.addEventListener('message', function(event) {
+          if (event.data && event.data.type === 'changeModel') {
+            currentModelType = event.data.model;
+            updateModelAttributes(templateModel);
+            
+            // Remove the current instance so that a new one is created next time
+            if (modelInstance) {
+              modelInstance.parentNode.removeChild(modelInstance);
+              modelInstance = null;
+            }
+            statusMessage.textContent = `Model changed to ${event.data.model}`;
+            statusMessage.style.backgroundColor = 'rgba(0,128,0,0.7)';
+            
+            setTimeout(() => {
+              statusMessage.style.backgroundColor = 'rgba(0,0,0,0.5)';
+              statusMessage.textContent = 'Looking for marker...';
+            }, 1500);
+          }
+        });
+        
+        // Hide the loading screen when the scene is ready
+        document.querySelector('a-scene').addEventListener('loaded', function () {
+          document.getElementById('loadingScreen').style.display = 'none';
+        });
+        
+        // Marker found event
+        document.getElementById('hiroMarker').addEventListener('markerFound', function() {
+          // If there's a pending marker lost timeout, cancel it.
+          if (markerLostTimeout) {
+            clearTimeout(markerLostTimeout);
+            markerLostTimeout = null;
+          }
+          
+          statusMessage.textContent = 'Marker found!';
+          statusMessage.style.backgroundColor = 'rgba(0,128,0,0.7)';
+          
+          // Always create a new model instance on marker found
+          if (modelInstance) {
+            modelInstance.parentNode.removeChild(modelInstance);
+          }
+          modelInstance = templateModel.cloneNode(true);
+          modelInstance.removeAttribute('id'); // Avoid duplicate IDs
+          updateModelAttributes(modelInstance);
+          markerContent.appendChild(modelInstance);
+          
+          // Optionally send a marker found message to the parent window
+          window.parent.postMessage({ type: 'markerFound' }, '*');
+        });
+        
+        // Marker lost event with delay to avoid quick toggling off the model
+        document.getElementById('hiroMarker').addEventListener('markerLost', function() {
+          // Delay the removal of the model to ensure the marker is truly lost.
+          markerLostTimeout = setTimeout(() => {
+            statusMessage.textContent = 'Marker lost. Please show marker again.';
+            statusMessage.style.backgroundColor = 'rgba(255,0,0,0.7)';
+          
+            if (modelInstance && modelInstance.parentNode) {
+              modelInstance.parentNode.removeChild(modelInstance);
+            }
+            modelInstance = null;
+            markerLostTimeout = 2000; // Reset the timeout to null after use
+            
+            setTimeout(() => {
+              statusMessage.textContent = 'Looking for marker...';
+              statusMessage.style.backgroundColor = 'rgba(0,0,0,0.5)';
+            }, 2000);
+          }, 500); // 500ms delay; adjust this value as needed
+        });
+        
+        // Handle orientation change by forcing a renderer resize if possible
+        window.addEventListener('orientationchange', function() {
+          setTimeout(() => {
+            const scene = document.querySelector('a-scene');
+            if (scene && scene.renderer && typeof scene.renderer.resize === 'function') {
+              scene.renderer.resize();
+            }
+          }, 200);
+        });
+      });
+    </script>
+  </body>
+</html>

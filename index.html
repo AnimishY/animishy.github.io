@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animish Yadav</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="stylesheet.css" />
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+  <meta name="description" content="Personal webpage of Animish Yadav." />
+
+  <!-- Include the library. -->
+  <script src="https://unpkg.com/github-calendar@latest/dist/github-calendar.min.js"></script>
+
+  <!-- Optionally, include the theme (if you don't want to struggle to write the CSS) -->
+  <link rel="stylesheet" href="https://unpkg.com/github-calendar@latest/dist/github-calendar-responsive.css" />
+
+  <style>
+    /* Particles background styles */
+    #particles-js {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none; /* Allow clicks to pass through */
+      opacity: 0.25; /* Very subtle for home page */
+    }
+
+    /* Make section elements appear above particles */
+    .home-models-section,
+    .new-section,
+    .container,
+    .avatar-container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Ensure the bubble skills area works properly */
+    .bubbles-container {
+      position: relative;
+      z-index: 3;
+    }
+    
+    /* Ensure particles don't interfere with main hero section */
+    .hero-section {
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Position the avatar in the bottom right corner */
+    .avatar-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    
+    /* Adjust speech bubble position to match bottom right position */
+    .avatar-speech-bubble {
+      position: absolute;
+      bottom: 110px;
+      right: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Particles background container - add this before any other content -->
+  <div id="particles-js"></div>
+  
+  <!-- NAV BAR COMES HERE -->
+  <nav>
+    <!-- Checkbox for toggling menu -->
+    <input type="checkbox" id="check">
+    <!-- Menu icon -->
+    <label for="check" class="checkbtn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <!-- Site logo -->
+    <label class="logo">@AnimishY</label>
+    <!-- Navigation links -->
+    <ul class="ohhello">
+      <li><a class="active" href="index.html">Home</a></li>
+      <li><a href="resume.html">Resume</a></li>
+      <li><a href="programming.html">Programming</a></li>
+      <li><a href="design.html">Design</a></li>
+      <li><a href="socials.html">Socials</a></li>
+    </ul>
+
+  </nav>
+
+  <!-- HERO SECTION WITH ANIMATED PARTICLES -->
+  <section class="hero-section">
+    <!-- Animated particles -->
+    <div class="particles">
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+    </div>
+    
+    <div class="hero-parallax">
+      <div class="hero-content">
+        <div class="hero-text-container">
+          <h1 class="hero-main-text">I am <span class="highlight">@AnimishY</span></h1>
+          
+          <div class="hero-typewriter">
+            <p>and I am a <span class="typewriter"></span></p>
+          </div>
+
+          <!-- Skills showcase as interactive bubbles -->
+          <div class="bubbles-container">
+            <div class="bubble" data-skill="JavaScript">JavaScript</div>
+            <div class="bubble" data-skill="Python">Python</div>
+            <div class="bubble" data-skill="React">React</div>
+            <div class="bubble" data-skill="Node.js">Node.js</div>
+            <div class="bubble" data-skill="UI/UX">UI/UX</div>
+            <div class="bubble" data-skill="3D Design">3D Design</div>
+            <div class="bubble bubble-sm" data-skill="CSS">CSS</div>
+            <div class="bubble bubble-sm" data-skill="HTML">HTML</div>
+            <div class="bubble bubble-sm" data-skill="Git">Git</div>
+            <div class="bubble bubble-lg" data-skill="AI">AI</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive AI Avatar Assistant -->
+    <div class="avatar-container">
+      <div class="avatar-wrapper">
+        <div class="avatar-speech-bubble" id="speech-bubble">
+          <p id="avatar-message">Hello! I'm Ani, your guide. How can I help you explore this portfolio?</p>
+          <div class="avatar-actions">
+            <button class="avatar-action" data-section="resume">Resume</button>
+            <button class="avatar-action" data-section="projects">Projects</button>
+            <button class="avatar-action" data-section="contact">Contact</button>
+          </div>
+        </div>
+        <div class="avatar" id="avatar">
+          <dotlottie-player 
+            src="https://lottie.host/6940de5d-987f-4e7f-b321-41cd6c837a95/BhBKMG7Zmp.lottie" 
+            background="transparent" 
+            speed="1" 
+            loop 
+            autoplay>
+          </dotlottie-player>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator placed at the bottom of the hero section -->
+    <div class="hero-scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <div>
+        <span class="scroll-arrow">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+    </div>
+    
+    <!-- Improved wave divider with better transition -->
+    <div class="shape-divider">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+        <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+        <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+      </svg>
+    </div>
+  </section>
+
+  <div class="container">
+    <div class="text-section">
+      <h1 class="h1mob gradient-text">Building Solutions <br> That pivot the world</h1>
+      <p class="pmob">
+        I am a passionate developer and designer with a knack for creating innovative solutions. My journey in the tech
+        world has been driven by a desire to make a positive impact through technology. I believe in the power of
+        collaboration and creativity to solve complex problems and bring ideas to life.
+      </p>
+    </div>
+    <div class="globe-section">
+      <canvas id="cobe" width="1000px" height="1000px"></canvas>
+    </div>
+  </div>
+
+  <script type="module">
+    import createGlobe from "https://cdn.skypack.dev/cobe";
+
+    let phi = 0;
+    let canvas = document.getElementById("cobe");
+
+    const globe = createGlobe(canvas, {
+      devicePixelRatio: 2,
+      width: 1000,
+      height: 1000,
+      phi: 0,
+      theta: 0,
+      dark: 0,
+      diffuse: 1.2,
+      scale: 1,
+      mapSamples: 16000,
+      mapBrightness: 6,
+      baseColor: [1, 1, 1],
+      markerColor: [56/255, 128/255, 223/255], // change the marker color to blue 3880df
+    
+      glowColor: [1, 1, 1],
+      offset: [0, 0],
+      markers: [
+        { location: [28.632429, 77.218788], size: 0.1 },
+        { location: [42.495971, -71.582363], size: 0.05 },
+        { location: [55.755825, 37.617298], size: 0.07 },
+        { location: [54.43067, 20.30330], size: 0.05 },
+        { location: [51.507351, -0.127758], size: 0.05 },
+        { location: [35.689487, 139.691711], size: 0.05 },
+        { location: [48.856613, 2.352222], size: 0.05 },
+        { location: [55.755825, 37.617298], size: 0.05 },
+        { location: [40.712776, -74.005974], size: 0.05 },
+        { location: [34.052235, -118.243683], size: 0.05 },
+        { location: [41.902782, 12.496366], size: 0.05 }
+      ],
+      onRender: (state) => {
+        state.phi = phi;
+        phi += 0.01;
+      }
+    });
+  </script>
+
+  <section class="home-models-section">
+    <h2 class="section-title">What I Do</h2>
+    <div class="home-models-container">
+      <div class="home-models-grid">
+        <div class="home-model-card">
+          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+            type="module"></script>
+          <dotlottie-player src="https://lottie.host/db550b9c-b9eb-43e7-84dc-b69c4568be85/KdMzlQ2bf5.lottie"
+            background="transparent" speed="1" loop autoplay></dotlottie-player>
+          <div class="home-card-content">
+            <h3>Programming</h3>
+            <p>Explore my coding projects and technical skills</p>
+            <a href="programming.html" class="fusion-web-button">
+              Explore Programming
+            </a>
+          </div>
+        </div>
+
+        <div class="home-model-card">
+          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+            type="module"></script>
+          <dotlottie-player src="https://lottie.host/cf0e1855-96dd-48ca-8e1e-4eb12c1c67b2/xsBqxPPz50.lottie"
+            background="transparent" speed="0.5" loop autoplay></dotlottie-player>
+          <div class="home-card-content">
+            <h3>Design</h3>
+            <p>Discover my creative design portfolio</p>
+            <a href="design.html" class="fusion-web-button">
+              Explore Design
+            </a>
+          </div>
+        </div>
+
+        <div class="home-model-card">
+          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+            type="module"></script>
+          <dotlottie-player src="https://lottie.host/4ca82ee1-681b-4a43-be4d-35bd2882dd50/THqQFItg8o.lottie"
+            background="transparent" speed="1" loop autoplay></dotlottie-player>
+          <div class="home-card-content">
+            <h3>Résumé</h3>
+            <p>Learn about my professional experience</p>
+            <a href="resume.html" class="fusion-web-button">
+              Explore Résumé
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="new-section">
+    <h3 class="chotutextme">Leave a message</h3>
+
+    <iframe width="100%" height="500px"
+      src="https://browserboard.com/whiteboard/izFFFQHJm5BWq76xkcM4Z7?key=JrsbaFDhv7aAnFuAzj86h9" frameborder="0"
+      scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <p>@AnimishY</p>
+      <p>Animish Yadav</p>
+    </div>
+    <p>&copy; 2025, All rights reserved.</p>
+    
+  </footer>
+
+  <!-- Typewriter effect and scroll animations -->
+  <script>
+    // Typewriter animation
+    const typewriter = document.querySelector('.typewriter');
+    const roles = [
+      'Developer', 
+      'Designer', 
+      'Problem Solver',
+      'Creative Thinker'
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typingDelay = 100; // Delay between each character typing
+
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      
+      if (isDeleting) {
+        // Deleting text
+        typewriter.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+        typingDelay = 50; // Faster when deleting
+      } else {
+        // Typing text
+        typewriter.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+        typingDelay = 150; // Slower when typing
+      }
+
+      // If we're done typing the full word
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        typingDelay = 1500; // Pause at end of word
+      } 
+      // If we've deleted the whole word
+      else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length; // Move to next role
+        typingDelay = 500; // Pause before typing new word
+      }
+
+      setTimeout(typeEffect, typingDelay);
+    }
+
+    // Start the typing animation
+    setTimeout(typeEffect, 1000);
+
+    // Interactive AI Avatar Assistant
+    const avatar = document.getElementById('avatar');
+    const speechBubble = document.getElementById('speech-bubble');
+    const avatarMessage = document.getElementById('avatar-message');
+    const avatarActions = document.querySelectorAll('.avatar-action');
+
+    // Avatar messages for different times of day
+    const getTimeBasedGreeting = () => {
+      const hour = new Date().getHours();
+      if (hour < 12) return "Good morning! I'm Ani, your virtual assistant. How can I help you today?";
+      if (hour < 18) return "Good afternoon! I'm Ani, your guide. How can I help you explore this portfolio?";
+      return "Good evening! I'm Ani. Let me help you navigate through this portfolio.";
+    };
+
+    // Messages for different sections
+    const sectionMessages = {
+      'resume': "The Resume section showcases Animish's professional experience, skills, and education.",
+      'projects': "Animish has worked on some amazing projects! You'll find them in the Programming and Design sections.",
+      'contact': "Want to get in touch with Animish? You can leave a message in the whiteboard section below or check out the social links."
+    };
+
+    // Create main menu buttons
+    function createMainMenu() {
+      const mainMenu = document.createElement('div');
+      mainMenu.className = 'avatar-actions';
+      mainMenu.innerHTML = `
+        <button class="avatar-action" data-section="resume">Resume</button>
+        <button class="avatar-action" data-section="projects">Projects</button>
+        <button class="avatar-action" data-section="contact">Contact</button>
+      `;
+      return mainMenu;
+    }
+
+    // Toggle speech bubble visibility
+    avatar.addEventListener('click', () => {
+      if (speechBubble.classList.contains('active')) {
+        speechBubble.classList.remove('active');
+      } else {
+        avatarMessage.textContent = getTimeBasedGreeting();
+        
+        // Reset to main menu whenever the avatar is clicked
+        const actionsContainer = document.querySelector('.avatar-actions');
+        if (actionsContainer) {
+          actionsContainer.replaceWith(createMainMenu());
+          
+          // Add event listeners to new buttons
+          document.querySelectorAll('.avatar-action').forEach(btn => {
+            btn.addEventListener('click', handleAvatarAction);
+          });
+        }
+        
+        speechBubble.classList.add('active');
+      }
+    });
+
+    // Function to handle avatar action button clicks
+    function handleAvatarAction(e) {
+      const section = e.target.dataset.section;
+      
+      // Update message based on selected section
+      if (sectionMessages[section]) {
+        avatarMessage.textContent = sectionMessages[section];
+        
+        // For resume, add view and back buttons
+        if (section === 'resume') {
+          const resumeOptions = document.createElement('div');
+          resumeOptions.className = 'avatar-actions';
+          resumeOptions.innerHTML = `
+            <button class="avatar-action" data-action="view-resume">View Resume</button>
+            <button class="avatar-action back-button" data-action="back">Back</button>
+          `;
+          
+          // Replace existing actions
+          document.querySelector('.avatar-actions').replaceWith(resumeOptions);
+          
+          // Add event listeners to new buttons
+          document.querySelector('[data-action="view-resume"]').addEventListener('click', () => {
+            window.location.href = 'resume.html';
+          });
+          
+          document.querySelector('[data-action="back"]').addEventListener('click', () => {
+            avatarMessage.textContent = getTimeBasedGreeting();
+            document.querySelector('.avatar-actions').replaceWith(createMainMenu());
+            
+            // Add event listeners to main menu buttons
+            document.querySelectorAll('.avatar-action').forEach(btn => {
+              btn.addEventListener('click', handleAvatarAction);
+            });
+          });
+        } 
+        // For projects, add programming, design, and back buttons
+        else if (section === 'projects') {
+          const projectOptions = document.createElement('div');
+          projectOptions.className = 'avatar-actions';
+          projectOptions.innerHTML = `
+            <button class="avatar-action" data-action="programming">Programming</button>
+            <button class="avatar-action" data-action="design">Design</button>
+            <button class="avatar-action back-button" data-action="back">Back</button>
+          `;
+          
+          // Replace existing actions
+          document.querySelector('.avatar-actions').replaceWith(projectOptions);
+          
+          // Add event listeners to new buttons
+          document.querySelector('[data-action="programming"]').addEventListener('click', () => {
+            window.location.href = 'programming.html';
+          });
+          
+          document.querySelector('[data-action="design"]').addEventListener('click', () => {
+            window.location.href = 'design.html';
+          });
+          
+          document.querySelector('[data-action="back"]').addEventListener('click', () => {
+            avatarMessage.textContent = getTimeBasedGreeting();
+            document.querySelector('.avatar-actions').replaceWith(createMainMenu());
+            
+            // Add event listeners to main menu buttons
+            document.querySelectorAll('.avatar-action').forEach(btn => {
+              btn.addEventListener('click', handleAvatarAction);
+            });
+          });
+        }
+        // For contact, add social links and back button
+        else if (section === 'contact') {
+          const contactOptions = document.createElement('div');
+          contactOptions.className = 'avatar-actions';
+          contactOptions.innerHTML = `
+            <button class="avatar-action" data-action="socials">Social Links</button>
+            <button class="avatar-action" data-action="whiteboard">Whiteboard</button>
+            <button class="avatar-action back-button" data-action="back">Back</button>
+          `;
+          
+          // Replace existing actions
+          document.querySelector('.avatar-actions').replaceWith(contactOptions);
+          
+          // Add event listeners to new buttons
+          document.querySelector('[data-action="socials"]').addEventListener('click', () => {
+            window.location.href = 'socials.html';
+          });
+          
+          document.querySelector('[data-action="whiteboard"]').addEventListener('click', () => {
+            // Scroll to the whiteboard section
+            document.querySelector('.new-section').scrollIntoView({
+              behavior: 'smooth'
+            });
+            speechBubble.classList.remove('active');
+          });
+          
+          document.querySelector('[data-action="back"]').addEventListener('click', () => {
+            avatarMessage.textContent = getTimeBasedGreeting();
+            document.querySelector('.avatar-actions').replaceWith(createMainMenu());
+            
+            // Add event listeners to main menu buttons
+            document.querySelectorAll('.avatar-action').forEach(btn => {
+              btn.addEventListener('click', handleAvatarAction);
+            });
+          });
+        }
+      }
+    }
+
+    // Initial setup of event listeners for avatar actions
+    avatarActions.forEach(action => {
+      action.addEventListener('click', handleAvatarAction);
+    });
+
+    // Simulate emotions and reactions based on user interaction
+    let lastInteraction = Date.now();
+    let idleTimeout;
+
+    // Reset idle timeout whenever user interacts with the page
+    document.addEventListener('mousemove', () => {
+      lastInteraction = Date.now();
+      clearTimeout(idleTimeout);
+      
+      // Set idle timeout for 30 seconds
+      idleTimeout = setTimeout(() => {
+        if (!speechBubble.classList.contains('active')) {
+          speechBubble.classList.add('active');
+          avatarMessage.textContent = "Looking for something specific? I can help you navigate!";
+        }
+      }, 30000);
+    });
+
+    // Initialize avatar on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      // Show avatar greeting after a slight delay
+      setTimeout(() => {
+        avatarMessage.textContent = getTimeBasedGreeting();
+        speechBubble.classList.add('active');
+        
+        // Hide speech bubble after 5 seconds if no interaction
+        setTimeout(() => {
+          if (!document.hasFocus()) {
+            speechBubble.classList.remove('active');
+          }
+        }, 5000);
+      }, 2000);
+    });
+
+    // Scroll animation effect
+    function revealOnScroll() {
+      const reveals = document.querySelectorAll('.home-models-section, .new-section');
+      
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add('reveal', 'active');
+        }
+      }
+    }
+
+    // Add the reveal class to sections
+    const sections = document.querySelectorAll('.home-models-section, .new-section');
+    sections.forEach(section => {
+      section.classList.add('reveal');
+    });
+
+    // Add parallax scrolling effect
+    window.addEventListener('scroll', function() {
+      const parallax = document.querySelector('.hero-parallax');
+      const scrollPosition = window.pageYOffset;
+      
+      // Move the background slightly as user scrolls
+      if (parallax) {
+        parallax.style.transform = `translateY(${scrollPosition * 0.4}px)`;
+      }
+      
+      // Reveal elements on scroll
+      revealOnScroll();
+      
+      // Hide avatar speech bubble when scrolling down significantly
+      if (scrollPosition > 100 && speechBubble.classList.contains('active')) {
+        speechBubble.classList.remove('active');
+      }
+    });
+
+    // Initialize reveal on page load
+    window.addEventListener('load', revealOnScroll);
+  </script>
+
+  <!-- Add the Lottie player script -->
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+  <!-- Audio elements for bubble pop sounds -->
+  <audio id="bubble-pop-1" src="tunes/bubblepop.mp3" preload="auto"></audio>
+  <audio id="bubble-pop-2" src="tunes/bubblepop.mp3" preload="auto"></audio>
+  <audio id="bubble-pop-3" src="tunes/bubblepop.mp3" preload="auto"></audio>
+  <audio id="bubble-pop-4" src="tunes/bubblepop.mp3" preload="auto"></audio>
+  <audio id="bubble-pop-5" src="tunes/bubblepop.mp3" preload="auto"></audio>
+  
+  <!-- Bubble popping script -->
+  <script>
+    // Bubble popping functionality
+    document.addEventListener('DOMContentLoaded', () => {
+      const bubbles = document.querySelectorAll('.bubble');
+      const popSounds = [
+        document.getElementById('bubble-pop-1'),
+        document.getElementById('bubble-pop-2'),
+        document.getElementById('bubble-pop-3'),
+        document.getElementById('bubble-pop-4'),
+        document.getElementById('bubble-pop-5')
+      ];
+      
+      // Function to play a random pop sound
+      function playRandomPopSound() {
+        const randomIndex = Math.floor(Math.random() * popSounds.length);
+        const sound = popSounds[randomIndex];
+        sound.volume = 0.4; // Set volume to 40%
+        
+        // Reset the audio to the beginning if it's already playing
+        sound.currentTime = 0;
+        sound.play();
+      }
+      
+      // Function to create splash particles
+      function createSplash(event, bubble) {
+        const splashCount = 8; // Number of splash particles
+        const bubbleContainer = document.querySelector('.bubbles-container');
+        const rect = bubble.getBoundingClientRect();
+        
+        // Get exact click position relative to the document
+        const clickX = event.clientX;
+        const clickY = event.clientY;
+        
+        // Get the container's position to calculate relative positioning
+        const containerRect = bubbleContainer.getBoundingClientRect();
+        
+        // Calculate relative position within the container
+        const relativeX = clickX - containerRect.left;
+        const relativeY = clickY - containerRect.top;
+        
+        // Get bubble size for scaling effects
+        const bubbleSize = Math.max(rect.width, rect.height);
+        
+        for (let i = 0; i < splashCount; i++) {
+          const splash = document.createElement('div');
+          splash.className = 'splash';
+          
+          // Position splash at the exact click location
+          splash.style.left = relativeX + 'px';
+          splash.style.top = relativeY + 'px';
+          
+          // Calculate splash direction (evenly distributed in a circle)
+          const angle = (i / splashCount) * 360;
+          splash.style.setProperty('--rotation', angle + 'deg');
+          
+          // Size based on bubble size
+          const size = bubbleSize / 10;
+          splash.style.width = size + 'px';
+          splash.style.height = size * 2.5 + 'px';
+          
+          // Random distance for the splash
+          const distance = bubbleSize * (0.5 + Math.random() * 0.5);
+          
+          // Add to container
+          bubbleContainer.appendChild(splash);
+          
+          // Animate the splash
+          splash.animate([
+            { 
+              transform: 'scale(0.1, 0.1) rotate(' + angle + 'deg)',
+              opacity: 0.8
+            },
+            { 
+              transform: 'translate(' + 
+                (Math.cos(angle * Math.PI / 180) * distance) + 'px, ' + 
+                (Math.sin(angle * Math.PI / 180) * distance) + 'px) ' + 
+                'scale(1, 3) rotate(' + angle + 'deg)',
+              opacity: 0
+            }
+          ], {
+            duration: 500 + Math.random() * 300,
+            easing: 'cubic-bezier(0.22, 0.61, 0.36, 1)'
+          }).onfinish = () => {
+            splash.remove();
+          };
+        }
+      }
+      
+      // Add click event to each bubble
+      bubbles.forEach(bubble => {
+        bubble.addEventListener('click', (e) => {
+          // Don't do anything if the bubble is already popping
+          if (bubble.classList.contains('popping')) {
+            return;
+          }
+          
+          // Play pop sound
+          playRandomPopSound();
+          
+          // Add popping class to trigger animation
+          bubble.classList.add('popping');
+          
+          // Create splash effect at the exact click location
+          createSplash(e, bubble);
+          
+          // Remove bubble after animation completes
+          setTimeout(() => {
+            // Optional: reveal something underneath the bubble or show a message
+            const skill = bubble.getAttribute('data-skill');
+            console.log(`Skill ${skill} popped!`);
+            
+            // You could add code here to reveal/show additional content
+          }, 500);
+        });
+      });
+      
+      // Regenerate bubbles on double-click of the container
+      document.querySelector('.bubbles-container').addEventListener('dblclick', () => {
+        bubbles.forEach(bubble => {
+          if (bubble.classList.contains('popping')) {
+            // Reset the bubble
+            bubble.classList.remove('popping');
+            
+            // Re-animate entrance
+            bubble.style.animation = 'none';
+            bubble.offsetHeight; // Trigger reflow
+            bubble.style.animation = 'float-in 1s forwards, float-bubble 5s ease-in-out infinite';
+            bubble.style.animationDelay = 
+              `calc(${bubble.style.getPropertyValue('--i')} * 0.2s), 
+              calc(${bubble.style.getPropertyValue('--i')} * 0.2s + 1s)`;
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- Add particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    // Initialize particles.js with subtle settings for home page
+    particlesJS("particles-js", {
+      "particles": {
+        "number": {
+          "value": 40, // Fewer particles on home page
+          "density": {
+            "enable": true,
+            "value_area": 800
+          }
+        },
+        "color": {
+          "value": "#0082e6"
+        },
+        "shape": {
+          "type": "circle",
+          "stroke": {
+            "width": 0,
+            "color": "#000000"
+          },
+          "polygon": {
+            "nb_sides": 5
+          }
+        },
+        "opacity": {
+          "value": 0.2,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 1,
+            "opacity_min": 0.1,
+            "sync": false
+          }
+        },
+        "size": {
+          "value": 3,
+          "random": true,
+          "anim": {
+            "enable": false,
+            "speed": 40,
+            "size_min": 0.1,
+            "sync": false
+          }
+        },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#0082e6",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 1.5,
+          "direction": "none",
+          "random": false,
+          "straight": false,
+          "out_mode": "out",
+          "bounce": false,
+          "attract": {
+            "enable": false,
+            "rotateX": 600,
+            "rotateY": 1200
+          }
+        }
+      },
+      "interactivity": {
+        "detect_on": "canvas",
+        "events": {
+          "onhover": {
+            "enable": true,
+            "mode": "grab"
+          },
+          "onclick": {
+            "enable": true,
+            "mode": "push"
+          },
+          "resize": true
+        },
+        "modes": {
+          "grab": {
+            "distance": 140,
+            "line_linked": {
+              "opacity": 0.6
+            }
+          },
+          "push": {
+            "particles_nb": 4
+          }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+</body>
+
+</html>

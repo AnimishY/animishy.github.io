@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>AR Model Viewer</title>
+    <style>
+      /* Add any additional styles if needed */
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>AR Model Viewer</h1>
+      <select id="modelSelector" onchange="changeModel()">
+        <option value="box">Box</option>
+        <option value="sphere">Sphere</option>
+        <option value="cylinder">Cylinder</option>
+        <option value="lamp">Lamp</option>
+      </select>
+    </header>
+    
+    <div class="mobile-instructions" id="mobileInstructions">
+      <p>For best AR experience on mobile: Allow camera access and scan a Hiro marker.</p>
+      <p><small>Tap the fullscreen button for immersive viewing.</small></p>
+    </div>
+    
+    <div class="ar-container">
+      <div class="loading-message" id="loading">Loading AR Experience...</div>
+      <button id="fullscreenBtn">⛶</button>
+      <iframe id="ar-frame" src="arf.html" allow="camera; accelerometer; gyroscope; magnetometer"></iframe>
+    </div>
+    
+    <script>
+      let currentModel = 'box'; // Default model
+      
+      // Function to detect mobile devices
+      function isMobile() {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      }
+      
+      // Function to change the 3D model
+      function changeModel() {
+        const selected = document.getElementById("modelSelector").value;
+        currentModel = selected; // Store current selection
+        const frame = document.getElementById('ar-frame');
+        frame.contentWindow.postMessage({
+          type: 'changeModel',
+          model: selected
+        }, '*');
+      }
+
+      // Handle messages from iframe
+      window.addEventListener('message', function(event) {
+        if (event.data.type === 'markerFound') {
+          // Ensure the current model is re-sent to the iframe
+          const frame = document.getElementById('ar-frame');
+          frame.contentWindow.postMessage({
+            type: 'changeModel',
+            model: currentModel
+          }, '*');
+        } else if (event.data.type === 'markerLost') {
+          console.log('Marker lost');
+        }
+      });
+      
+      // When the content loads
+      window.addEventListener('DOMContentLoaded', function() {
+        // Set initial model state
+        currentModel = document.getElementById("modelSelector").value;
+        
+        // Hide loading message when iframe loads
+        document.getElementById('ar-frame').onload = function() {
+          document.getElementById('loading').style.display = 'none';
+        };
+        
+        // Show mobile instructions and fullscreen button if on mobile
+        if (isMobile()) {
+          document.getElementById('mobileInstructions').style.display = 'block';
+          document.getElementById('fullscreenBtn').style.display = 'block';
+        }
+        
+        // Set up fullscreen functionality
+        document.getElementById('fullscreenBtn').addEventListener('click', function() {
+          const frame = document.getElementById('ar-frame');
+          if (frame.requestFullscreen) {
+            frame.requestFullscreen();
+          } else if (frame.webkitRequestFullscreen) { /* Safari */
+            frame.webkitRequestFullscreen();
+          } else if (frame.msRequestFullscreen) { /* IE11 */
+            frame.msRequestFullscreen();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
