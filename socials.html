@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animish Yadav | Socials</title>
+    <link rel="icon" href="favi.png" type="image/pngg" sizes="16x16" />
 
     <link rel="stylesheet" href="stylesheet.css" />
     <link
@@ -316,6 +317,81 @@
           grid-template-columns: 1fr;
         }
       }
+
+      /* Footer styling */
+      .footer {
+        background-color: #f8f8f8;
+        padding: 15px 30px;
+        border-top: 1px solid #e0e0e0;
+        margin-top: 40px;
+        position: relative;
+        z-index: 10; /* Higher z-index to ensure footer appears above other elements */
+      }
+
+      .footer-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-info {
+        text-align: left;
+      }
+
+      .footer-info p {
+        margin: 5px 0;
+        font-size: 14px;
+        color: #333; /* Explicit font color for better visibility */
+      }
+
+      .footer-quote {
+        font-style: italic;
+        font-size: 16px;
+        color: #555;
+        text-align: right;
+        flex-grow: 1;
+        padding: 0 20px;
+      }
+
+      .footer-monkey {
+        flex-shrink: 0;
+      }
+
+      .footer-monkey img {
+        height: 60px;
+        width: auto;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+
+      .footer-monkey img:hover {
+        transform: scale(1.1) rotate(5deg);
+      }
+
+      /* Responsive design for smaller screens */
+      @media screen and (max-width: 768px) {
+        .footer-content {
+          flex-direction: column;
+          text-align: center;
+        }
+        
+        .footer-info {
+          text-align: center;
+          margin-bottom: 10px;
+        }
+        
+        .footer-quote {
+          margin: 10px 0;
+          text-align: center;
+          padding: 0;
+        }
+        
+        .footer-monkey {
+          margin-top: 10px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -396,12 +472,20 @@
     <div class="social-tooltip">Connect with me!</div>
 
     <footer class="footer">
-      <div class="footer-links">
-        <p>@AnimishY</p>
-        <p>Animish Yadav</p>
+      <div class="footer-content">
+        <div class="footer-info">
+          <p>@AnimishY</p>
+          <p>Animish Yadav</p>
+          <p>&copy; 2025, All rights reserved.</p>
+        </div>
+        <div class="footer-quote">
+          <p>"Creativity is intelligence having fun"</p>
+        </div>
+        <div class="footer-monkey">
+          <img src="Adorable_Monkey_in_a_Sunlit_Jungle-removebg-preview.png" alt="Monkey" id="monkey-img">
+          <audio id="monkey-sound" src="tunes/monkey-sound.mp3" preload="auto"></audio>
+        </div>
       </div>
-      <p>&copy; 2025, All rights reserved.</p>
-      
     </footer>
 
     <!-- Scripts -->
@@ -506,6 +590,23 @@
         const scoreElement = document.getElementById('score');
         const tooltip = document.querySelector('.social-tooltip');
         let score = 0;
+        
+        // Monkey sound and animation functionality
+        const monkeyImg = document.getElementById('monkey-img');
+        const monkeySound = document.getElementById('monkey-sound');
+        
+        monkeyImg.addEventListener('click', function() {
+          // Reset audio to beginning if it's already playing
+          monkeySound.currentTime = 0;
+          // Play the monkey sound
+          monkeySound.play().catch(e => console.log('Audio play failed:', e));
+          
+          // Add a little animation when clicked
+          this.style.transform = 'scale(1.2) rotate(10deg)';
+          setTimeout(() => {
+            this.style.transform = '';
+          }, 500);
+        });
         
         // Social media platforms for the bubbles
         const socials = [
